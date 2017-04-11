@@ -24,7 +24,7 @@ Dataset can be downloaded from [here](https://www.dropbox.com/sh/5iq8caqzjf1qlyx
 ### Installation
 1. Install all the dependencies.
 2. Compile the source code placed in **src** folder, name the generated executable **ELLC** and place it in the **bin** folder.
-3. A part of the code is executed on MATLAB. Alter the bin\ELLC_LC.sh script as follows:
+3. A part of the code is executed on MATLAB. Alter the **bin\ELLC_LC.sh** script as follows:
 
 Change all occurences of
 
@@ -39,7 +39,7 @@ To
 
 ### Usage
 
-1. Place the image sequence in *data* folder.
+1. Place the image sequence in **data** folder.
 2. Update the Instrinsic parameters and other flags as described in the next section.
 3. Execute. The program has two modes:
 	1. Local loop closure off : Run **ELLC** executable from inside the bin folder 
@@ -51,36 +51,36 @@ Parameters/ Flags can be changed in ExternVariable.h. Some of the the important 
 
 * Intrinsic Parameters:
 
-	* ORIG\_COLS: Number of columns in the original image.
-	* ORIG\_ROWS: Number of rows in the original image.
-	* ORIG\_FX: Focal length in X direction.
-	* ORIG\_FY: Focal length in Y direction.
-	* ORIG\_CX: Principal point offset in X direction. [default: ORIG_COLS/2.0]
-	* ORIG\_CY: Principal point offset in Y direction. [default: ORIG_ROWS/2.0]
-	* distortion_parameters: Distortion parameters.
+	* **ORIG\_COLS**: Number of columns in the original image.
+	* **ORIG\_ROWS**: Number of rows in the original image.
+	* **ORIG\_FX**: Focal length in X direction.
+	* **ORIG\_FY**: Focal length in Y direction.
+	* **ORIG\_CX**: Principal point offset in X direction. [default: ORIG_COLS/2.0]
+	* **ORIG\_CY**: Principal point offset in Y direction. [default: ORIG_ROWS/2.0]
+	* **distortion_parameters**: Distortion parameters.
 
 
 * Display/save images: 
 
-	* FLAG\_DISPLAY\_IMAGES: Displays read images, and the residual images for each Gauss Newton iteration. [default: False]
-	* FLAG\_DISPLAY\_DEPTH_MAP: Displays the updated depth map for every keyframe [default: true] 
-	* FLAG\_SAVE\_DEPTH\_MAP: Saves the depth map of keyframes in /Test_images. Blue is near and red is far. [default: false] 
-	* FLAG\_SAVE\_MATCH\_IMAGES: Saves the frames matched during local loop closures in /matches (LC only) [default: False]
+	* **FLAG\_DISPLAY\_IMAGES**: Displays read images, and the residual images for each Gauss Newton iteration. [default: False]
+	* **FLAG\_DISPLAY\_DEPTH_MAP**: Displays the updated depth map for every keyframe [default: true] 
+	* **FLAG\_SAVE\_DEPTH\_MAP**: Saves the depth map of keyframes in /Test_images. Blue is near and red is far. [default: false] 
+	* **FLAG\_SAVE\_MATCH\_IMAGES**: Saves the frames matched during local loop closures in /matches (LC only) [default: False]
 
 * Write poses: 
 
-	* FLAG\_WRITE\_ORIG\_POSES: Writes original pose of each frame w.r.t world origin i.e first frame in \outputs\poses_orig.txt [default: True]  
+	* **FLAG\_WRITE\_ORIG\_POSES**: Writes original pose of each frame w.r.t world origin i.e first frame in \outputs\poses_orig.txt [default: True]  
 
-	* FLAG\_WRITE\_MATCH\_POSES: Writes relative pose of extra matches during loop closure in \outputs\matchframes.txt (LC only). [default: False]
+	* **FLAG\_WRITE\_MATCH\_POSES**: Writes relative pose of extra matches during loop closure in \outputs\matchframes.txt (LC only). [default: False]
 
 * Multi-threading: 	
-	* FLAG\_DO\_PARALLEL\_DEPTH_ESTIMATION [default: True]
-	* FLAG\_DO\_PARALLEL\_POSE\_ESTIMATION [default: True]
+	* **FLAG\_DO\_PARALLEL\_DEPTH_ESTIMATION** [default: True]
+	* **FLAG\_DO\_PARALLEL\_POSE\_ESTIMATION** [default: True]
 
 
 ### Outputs
 
-Final world poses in **outputs\poses_orig.txt** are saved as Lie Algebra elements in the following format: 
+Final world poses in **outputs\poses_orig.txt** are saved as **Lie Algebra** elements in the following format: 
 
 ```
 CurrentFrameId KeyframeId wx wy wz vx vy vz rescalingFactor depthMapOccupancy
