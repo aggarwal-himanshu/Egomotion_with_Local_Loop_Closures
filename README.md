@@ -1,4 +1,4 @@
-#Egomotion with Local Loop Closures (ELLC) 
+# Egomotion with Local Loop Closures (ELLC) 
 
 This code is based on the paper [Computing Egomotion with Local Loop Closures for Egocentric Videos](https://arxiv.org/pdf/1701.04743.pdf) by Suvam Patra, Himanshu Aggarwal, Himani Arora, Chetan Arora, Subhashis Banerjee. It implements a robust method for camera pose estimation using short local loop closures and rotation averaging, designed specifically for egocentric videos.
 
@@ -7,7 +7,8 @@ This code is based on the paper [Computing Egomotion with Local Loop Closures fo
 1. **LSD-SLAM**:  J. Engel, T. Schops, and D. Cremers, “LSD-SLAM: Large-Scale Direct Monocular SLAM,” in Proceedings of the European Conference on Computer Vision (ECCV), 2014, pp. 834–849.
 2. **Efficient and Robust Large-Scale Rotation Averaging**: A. Chatterjee and V. M. Govindu, “Efficient and robust large-scale rotation averaging.” in Proceedings of the IEEE International Conference on Computer Vision (ICCV), 2013, pp. 521–528.
 
-###Dependencies
+### Dependencies
+
 * OpenCV (3.0.0)
 * Eigen (3.2.5)
 * Boost (1.59.0)
@@ -16,10 +17,11 @@ This code is based on the paper [Computing Egomotion with Local Loop Closures fo
 
 Tested on Xcode (Version 6.4)
 
-###Data
+### Data
+
 Dataset can be downloaded from [here](https://www.dropbox.com/sh/5iq8caqzjf1qlyx/AADy71Wg3H_0tfE4XvNYr9fSa?dl=0) or the first two videos from the [HUJI EgoSeg Dataset](http://www.vision.huji.ac.il/egoseg/videos/dataset.html). In addition you can also use your own egocentric videos but remember to provide the intrinsic parameters.
 
-###Installation
+### Installation
 1. Install all the dependencies.
 2. Compile the source code placed in **src** folder, name the generated executable **ELLC** and place it in the **bin** folder.
 3. A part of the code is executed on MATLAB. Alter the bin\ELLC_LC.sh script as follows:
@@ -35,7 +37,7 @@ To
 <MATLAB\_PATH> -nosplash -nodisplay -r
 ```
 
-###Usage
+### Usage
 
 1. Place the image sequence in *data* folder.
 2. Update the Instrinsic parameters and other flags as described in the next section.
@@ -43,7 +45,8 @@ To
 	1. Local loop closure off : Run **ELLC** executable from inside the bin folder 
 	2. Local loop closure on : Run **ELLC_LC.sh** script from inside the bin folder  
 
-###Configurable Parameters and Flags 
+### Configurable Parameters and Flags 
+
 Parameters/ Flags can be changed in ExternVariable.h. Some of the the important ones are summarized below: 
 
 * Intrinsic Parameters:
@@ -75,7 +78,7 @@ Parameters/ Flags can be changed in ExternVariable.h. Some of the the important 
 	* FLAG\_DO\_PARALLEL\_POSE\_ESTIMATION [default: True]
 
 
-###Outputs
+### Outputs
 
 Final world poses in **outputs\poses_orig.txt** are saved as Lie Algebra elements in the following format: 
 
